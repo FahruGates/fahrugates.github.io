@@ -1,66 +1,66 @@
 <!doctype html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>Simple Stopwatch</title>
-	<link rel="icon" type="image/x-icon" href="favicon(1).ico">
-	<style>
+<meta charset="UTF-8">
+<title>Simple Stopwatch</title>
+<link rel="icon" type="image/x-icon" href="favicon(1).ico">
+<style>
 		@media (max-width: 575.98px) { 
 			.btn {
 				width: 144px;
 				height: 72px;
 			}
 		}
-	</style>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</style>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </head>
 <body onload="show();">
-	<div class="jumbotron jumbotron-fluid bg-success">
-	  <div class="container">
-	    <h1 class="display-4 text-white">Selamat Datang</h1>
-		  <p class="lead text-white">Selamat memakai <b><i>STOPWATCH</i></b>. <br>Untuk memakainya tinggal klik tombol</p>
-	  </div>
-	</div>
-	<div>
-	
+<div class="jumbotron jumbotron-fluid bg-success">
 	<div class="container">
-	  <div class="row">
-	    <div class="col-md-2"></div>
-	    <div class="col-md-8">
-	      	<div class="card">
-		  <div class="card-header bg-dark text-center">
-		    <div class="container">
-				<h1 class="card-title text-white"><div>Time: <span id="time"></span></div></h1>
-				<p class="card-text">
-				 <footer class="blockquote-footer text-white">Copyright &copy;  <cite title="Source Title">FAHRU</cite></footer>
-				</p>
-			  </div>
-		     </div>
-		  <div class="card-body text-center">
-			<div class="container">
-			  <div class="row">
-			    <div class="col-sm">
-			      <input class="btn btn-info btn-block" type="button" value="start" onclick="start();">
-			    </div>
-			    <div class="col-sm">
-			      <input class="btn btn-warning btn-block" type="button" value="stop" onclick="stop();">
-			    </div>
-			    <div class="col-sm">
-			      <input class="btn btn-danger btn-block" type="button" value="reset" onclick="reset()">
-			    </div>
-			  </div>
-			</div>
-		  </div>
-		  </div>
-		</div>
-	    </div>
-	    <div class="col-md-2"></div>
-	   </div>
+		<h1 class="display-4 text-white">Selamat Datang</h1>
+		<p class="lead text-white">
+			Selamat memakai <b><i>STOPWATCH</i></b>. <br>Untuk memakainya tinggal klik tombol</p>
 	</div>
-	
-	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-	<script src="stopwatch.js"></script>
+</div>
+<div>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-2"></div>
+			<div class="col-md-8">
+				<div class="card">
+					<div class="card-header bg-dark text-center">
+						<div class="container">
+							<h1 class="card-title text-white">
+							<div>
+								Time: <span id="time"></span>
+							</div>
+							</h1>
+							<p class="card-text">
+								<footer class="blockquote-footer text-white">Copyright &copy; <cite title="Source Title">FAHRU</cite></footer>
+							</p>
+						</div>
+					</div>
+					<div class="card-body text-center">
+						<div class="container">
+							<div class="row">
+								<div class="col-sm">
+									<input class="btn btn-info btn-block" type="button" value="start" onclick="start();"></div>
+								<div class="col-sm">
+									<input class="btn btn-warning btn-block" type="button" value="stop" onclick="stop();"></div>
+								<div class="col-sm">
+									<input class="btn btn-danger btn-block" type="button" value="reset" onclick="reset()"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-2"></div>
+	</div>
+</div>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="stopwatch.js"></script>
 </body>
 </html>
