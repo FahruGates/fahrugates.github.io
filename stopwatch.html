@@ -3,95 +3,40 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Stopwatch</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </head>
 <body onload="show();">
-	<div>Time: <span id="time"></span></div>
-	<input type="button" value="start" onclick="start();">
-	<input type="button" value="stop" onclick="stop();">
-	<input type="button" value="reset" onclick="reset()">
 	
-	<script>
-	var	clsStopwatch = function() {
-		// Private vars
-		var	startAt	= 0;	// Time of last start / resume. (0 if not running)
-		var	lapTime	= 0;	// Time on the clock when last stopped in milliseconds
-
-		var	now	= function() {
-				return (new Date()).getTime(); 
-			}; 
- 
-		// Public methods
-		// Start or resume
-		this.start = function() {
-				startAt	= startAt ? startAt : now();
-			};
-
-		// Stop or pause
-		this.stop = function() {
-				// If running, update elapsed time otherwise keep it
-				lapTime	= startAt ? lapTime + now() - startAt : lapTime;
-				startAt	= 0; // Paused
-			};
-
-		// Reset
-		this.reset = function() {
-				lapTime = startAt = 0;
-			};
-
-		// Duration
-		this.time = function() {
-				return lapTime + (startAt ? now() - startAt : 0); 
-			};
-		};
-
-		var x = new clsStopwatch();
-		var $time;
-		var clocktimer;
-
-		function pad(num, size) {
-			var s = "0000" + num;
-			return s.substr(s.length - size);
-		}
-
-		function formatTime(time) {
-			var h = m = s = ms = 0;
-			var newTime = '';
-
-			h = Math.floor( time / (60 * 60 * 1000) );
-			time = time % (60 * 60 * 1000);
-			m = Math.floor( time / (60 * 1000) );
-			time = time % (60 * 1000);
-			s = Math.floor( time / 1000 );
-			ms = time % 1000;
-
-			newTime = pad(h, 2) + ':' + pad(m, 2) + ':' + pad(s, 2) + ':' + pad(ms, 3);
-			return newTime;
-		}
-
-		function show() {
-			$time = document.getElementById('time');
-			update();
-		}
-
-		function update() {
-			$time.innerHTML = formatTime(x.time());
-		}
-
-		function start() {
-			clocktimer = setInterval("update()", 1);
-			x.start();
-		}
-
-		function stop() {
-			x.stop();
-			clearInterval(clocktimer);
-		}
-
-		function reset() {
-			stop();
-			x.reset();
-			update();
-		}
-	</script>
+	<div class="card">
+	  <div class="card-header">
+	    <div class="container">
+		  <div class="row">
+		    <div class="col-sm">
+		      <input class="btn btn-info btn-block" type="button" value="start" onclick="start();">
+		    </div>
+		    <div class="col-sm">
+		      <input class="btn btn-warning btn-block" type="button" value="stop" onclick="stop();">
+		    </div>
+		    <div class="col-sm">
+		      <input class="btn btn-danger btn-block" type="button" value="reset" onclick="reset()">
+		    </div>
+		  </div>
+		</div>
+	     </div>
+	  <div class="card-body">
+	    <h5 class="card-title"><div>Time: <span id="time"></span></div></h5>
+	    <p class="card-text">
+		  <footer class="blockquote-footer">Copyright @copy  <cite title="Source Title">FAHRU</cite></footer>
+	    </p>
+	    <a href="#" class="btn btn-primary">Go somewhere</a>
+	  </div>
+	</div>
+	
+	
+	
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="stopwatch.js"></script>
 </body>
 </html>
