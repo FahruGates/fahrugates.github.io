@@ -60,6 +60,8 @@
 </tr>
 </tbody>
 </table>
+	
+	<div id="result"><div>
 
 <!-- 🔥🔥🔥🔥 start javascript 🔥🔥🔥🔥 -->
 <script>
@@ -101,6 +103,12 @@
       // } else {
       //   return number;
       // }
+	    
+	    let minuteCounts = localStorage.setItem("minuteCount", minutes);
+	    let secondCounts = localStorage.setItem("secondCount", seconds);
+	    
+	    document.getElementById("result").innerHTML = `menit ke {minuteCounts} : {secondCounts}`;
+	    
     }
     startButton.addEventListener('click', startTimer);
     stopButton.addEventListener('click', stopTimer);
