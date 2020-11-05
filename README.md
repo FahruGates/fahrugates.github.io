@@ -1,3 +1,3 @@
 # fahrugates.github.io
-my BIo
+my Bio : https://fahrugates.github.io
 cuman sebuah hasil dari kegabutan kalau kata sunda nya mah keur eweuh gawe hehe.
